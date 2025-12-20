@@ -80,7 +80,7 @@ const Footer = () => {
             © 2024 DSAI Club. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm">
-            Made with <span className="text-primary">♥</span> by DSAI Team
+            Made with <span className="text-primary">♥</span> Rahul
           </p>
         </div>
       </div>
