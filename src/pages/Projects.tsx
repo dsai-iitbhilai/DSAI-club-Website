@@ -4,53 +4,50 @@ import Layout from "@/components/layout/Layout";
 
 const projects = [
   {
-    title: "Face Recognition Attendance System",
-    description: "An AI-powered attendance system using facial recognition technology. Implemented for campus security and automated attendance tracking in classrooms.",
-    tags: ["Computer Vision", "Deep Learning", "OpenCV", "Python"],
+    title: "IntelliView",
+    description:
+      "AI-powered interview platform being built by the DSAI Club to simulate technical interviews and help students practice.",
+    tags: ["TypeScript", "AI", "Web App"],
+    status: "Active",
+    github: "https://github.com/dsai-iitbhilai/IntelliView",
+  },
+  {
+    title: "Cloudphysician",
+    description:
+      "Project aimed at addressing challenges in ICU care by leveraging machine learning and computer vision to extract vital signs from patient monitor images.",
+    tags: ["Python", "Computer Vision", "Healthcare"],
+    status: "Active",
+    github: "https://github.com/dsai-iitbhilai/Cloudphysician",
+  },
+  {
+    title: "FaceRec",
+    description:
+      "Face recognition system to be implemented in IIT Bhilai for secure identification and attendance use-cases.",
+    tags: ["Jupyter Notebook", "Deep Learning", "Face Recognition"],
     status: "Completed",
-    github: "#",
+    github: "https://github.com/dsai-iitbhilai/FaceRec",
   },
   {
-    title: "Sentiment Analysis Dashboard",
-    description: "Real-time sentiment analysis tool for social media monitoring. Helps brands understand customer feedback and public opinion.",
-    tags: ["NLP", "Machine Learning", "React", "FastAPI"],
-    status: "In Progress",
-    github: "#",
+    title: "yolov7-deepsort-tracking",
+    description:
+      "Modular codebase for object detection and tracking in videos using YOLOv7 and DeepSORT, ready for real-world deployment.",
+    tags: ["Jupyter Notebook", "YOLOv7", "Tracking"],
+    status: "Active",
+    github: "https://github.com/dsai-iitbhilai/yolov7-deepsort-tracking",
   },
   {
-    title: "Stock Price Predictor",
-    description: "LSTM-based deep learning model for stock market price prediction. Uses historical data and technical indicators.",
-    tags: ["Deep Learning", "LSTM", "Finance", "TensorFlow"],
+    title: "Photo-Sharing-App",
+    description:
+      "Photo sharing web app that uses ML to group faces, organize group photos automatically, and make sharing easier.",
+    tags: ["HTML", "Machine Learning", "Web App"],
     status: "Completed",
-    github: "#",
-  },
-  {
-    title: "Chatbot for Campus Queries",
-    description: "Intelligent chatbot to answer frequently asked questions about college admissions, courses, and facilities.",
-    tags: ["NLP", "Chatbot", "Transformers", "Flask"],
-    status: "In Progress",
-    github: "#",
-  },
-  {
-    title: "Medical Image Classification",
-    description: "CNN-based model for detecting diseases from medical imaging data like X-rays and MRI scans.",
-    tags: ["Healthcare", "CNN", "PyTorch", "Image Classification"],
-    status: "Completed",
-    github: "#",
-  },
-  {
-    title: "Recommendation Engine",
-    description: "Collaborative filtering based recommendation system for suggesting courses and learning resources to students.",
-    tags: ["Machine Learning", "Collaborative Filtering", "Python"],
-    status: "Planning",
-    github: "#",
+    github: "https://github.com/dsai-iitbhilai/Photo-Sharing-App",
   },
 ];
 
 const statusColors: Record<string, string> = {
-  "Completed": "bg-primary/20 text-primary",
-  "In Progress": "bg-chart-2/20 text-chart-2",
-  "Planning": "bg-muted text-muted-foreground",
+  Active: "bg-chart-2/20 text-chart-2",
+  Completed: "bg-primary/20 text-primary",
 };
 
 const Projects = () => {
