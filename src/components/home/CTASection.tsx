@@ -1,11 +1,10 @@
-import { ArrowRight, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Sparkles } from "lucide-react";
 
 const CTASection = () => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <div className="relative glass-card rounded-3xl p-8 md:p-16 overflow-hidden">
+        <div className="relative glass-card rounded-3xl p-8 md:p-16 overflow-hidden animate-slide-up hover:glow-primary hover:-translate-y-2 transition-all duration-300">
           {/* Background decorations */}
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-primary/10 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-chart-2/10 blur-3xl" />
@@ -27,14 +26,14 @@ const CTASection = () => {
               Get access to exclusive resources, workshops, and mentorship.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="gradient-primary glow-primary text-primary-foreground font-semibold gap-2">
-                Get Started Now
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-secondary">
-                Learn More
-              </Button>
+            <div className="pt-4">
+              <p className="text-sm text-muted-foreground mb-2">Contact us at</p>
+              <a
+                href="mailto:dsai_club@iitbhilai.ac.in"
+                className="text-lg md:text-xl font-semibold text-primary hover:text-primary/80 transition-colors break-all"
+              >
+                dsai_club@iitbhilai.ac.in
+              </a>
             </div>
           </div>
         </div>

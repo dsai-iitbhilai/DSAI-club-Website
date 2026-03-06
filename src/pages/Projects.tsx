@@ -1,56 +1,11 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-
-const projects = [
-  {
-    title: "Face Recognition Attendance System",
-    description: "An AI-powered attendance system using facial recognition technology. Implemented for campus security and automated attendance tracking in classrooms.",
-    tags: ["Computer Vision", "Deep Learning", "OpenCV", "Python"],
-    status: "Completed",
-    github: "#",
-  },
-  {
-    title: "Sentiment Analysis Dashboard",
-    description: "Real-time sentiment analysis tool for social media monitoring. Helps brands understand customer feedback and public opinion.",
-    tags: ["NLP", "Machine Learning", "React", "FastAPI"],
-    status: "In Progress",
-    github: "#",
-  },
-  {
-    title: "Stock Price Predictor",
-    description: "LSTM-based deep learning model for stock market price prediction. Uses historical data and technical indicators.",
-    tags: ["Deep Learning", "LSTM", "Finance", "TensorFlow"],
-    status: "Completed",
-    github: "#",
-  },
-  {
-    title: "Chatbot for Campus Queries",
-    description: "Intelligent chatbot to answer frequently asked questions about college admissions, courses, and facilities.",
-    tags: ["NLP", "Chatbot", "Transformers", "Flask"],
-    status: "In Progress",
-    github: "#",
-  },
-  {
-    title: "Medical Image Classification",
-    description: "CNN-based model for detecting diseases from medical imaging data like X-rays and MRI scans.",
-    tags: ["Healthcare", "CNN", "PyTorch", "Image Classification"],
-    status: "Completed",
-    github: "#",
-  },
-  {
-    title: "Recommendation Engine",
-    description: "Collaborative filtering based recommendation system for suggesting courses and learning resources to students.",
-    tags: ["Machine Learning", "Collaborative Filtering", "Python"],
-    status: "Planning",
-    github: "#",
-  },
-];
+import { projects } from "@/data/projects";
 
 const statusColors: Record<string, string> = {
-  "Completed": "bg-primary/20 text-primary",
-  "In Progress": "bg-chart-2/20 text-chart-2",
-  "Planning": "bg-muted text-muted-foreground",
+  Active: "bg-chart-2/20 text-chart-2",
+  Completed: "bg-primary/20 text-primary",
 };
 
 const Projects = () => {
@@ -75,18 +30,22 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="glass-card rounded-xl p-6 hover:glow-primary transition-all duration-300 group flex flex-col"
+                className="glass-card rounded-xl p-6 hover:glow-primary hover:-translate-y-2 transition-all duration-300 group flex flex-col animate-slide-up"
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[project.status]}`}>
                     {project.status}
                   </span>
-                  <a
-                    href={project.github}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
 
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
@@ -108,9 +67,13 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <Button variant="link" className="text-primary p-0 h-auto gap-1 w-fit">
-                  View Details <ExternalLink className="w-4 h-4" />
-                </Button>
+                {project.github && (
+                  <Button asChild variant="link" className="text-primary p-0 h-auto gap-1 w-fit">
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      View Details <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                )}
               </div>
             ))}
           </div>

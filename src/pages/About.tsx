@@ -61,7 +61,7 @@ const About = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
             {stats.map((stat, index) => (
-              <div key={index} className="glass-card rounded-xl p-6 text-center">
+              <div key={index} className="glass-card rounded-xl p-6 text-center animate-slide-up">
                 <p className="text-4xl font-bold text-gradient">{stat.value}</p>
                 <p className="text-muted-foreground text-sm mt-2">{stat.label}</p>
               </div>
@@ -73,7 +73,10 @@ const About = () => {
             <h2 className="text-3xl font-bold text-foreground text-center mb-12">Our Values</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
-                <div key={index} className="glass-card rounded-xl p-6 hover:glow-primary transition-all group">
+                <div
+                  key={index}
+                  className="glass-card rounded-xl p-6 hover:glow-primary hover:-translate-y-2 transition-all duration-300 group animate-slide-up"
+                >
                   <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:gradient-primary transition-all">
                     <value.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
@@ -89,7 +92,10 @@ const About = () => {
             <h2 className="text-3xl font-bold text-foreground text-center mb-12">What We Do</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {activities.map((activity, index) => (
-                <div key={index} className="glass-card rounded-xl p-6 border-l-4 border-primary">
+                <div
+                  key={index}
+                  className="glass-card rounded-xl p-6 border-l-4 border-primary hover:glow-primary hover:-translate-y-2 transition-all duration-300 animate-slide-up"
+                >
                   <h3 className="text-lg font-semibold text-foreground mb-2">{activity.title}</h3>
                   <p className="text-muted-foreground text-sm">{activity.description}</p>
                 </div>
@@ -98,7 +104,7 @@ const About = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="glass-card rounded-2xl p-8 md:p-12">
+          <div className="glass-card rounded-2xl p-8 md:p-12 animate-slide-up hover:glow-primary hover:-translate-y-2 transition-all duration-300">
             <h2 className="text-3xl font-bold text-foreground text-center mb-8">Get In Touch</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
               <div className="flex items-center gap-4">

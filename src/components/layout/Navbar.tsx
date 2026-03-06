@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Brain } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -22,9 +21,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center glow-primary transition-all group-hover:scale-110">
-              <Brain className="w-6 h-6 text-primary-foreground" />
-            </div>
+            <img
+              src="/logo.jpeg"
+              alt="DSAI Club logo"
+              className="w-10 h-10 md:w-11 md:h-11 rounded-lg object-contain bg-white/90 p-1 shadow-sm transition-all group-hover:scale-105"
+            />
             <span className="text-xl font-bold text-foreground">DSAI</span>
           </Link>
 
@@ -48,9 +49,12 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="gradient-primary glow-primary text-primary-foreground font-semibold">
-              Join Us
-            </Button>
+            <a
+              href="mailto:dsai_club@iitbhilai.ac.in"
+              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+            >
+              dsai_club@iitbhilai.ac.in
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -81,9 +85,12 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button className="gradient-primary glow-primary text-primary-foreground font-semibold mt-2">
-                Join Us
-              </Button>
+              <a
+                href="mailto:dsai_club@iitbhilai.ac.in"
+                className="px-4 py-3 text-sm font-medium text-primary hover:bg-secondary/50 rounded-lg transition-all mt-2"
+              >
+                dsai_club@iitbhilai.ac.in
+              </a>
             </div>
           </div>
         )}

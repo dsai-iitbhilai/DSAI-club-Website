@@ -95,7 +95,7 @@ const Resources = () => {
               {roadmaps.map((roadmap, index) => (
                 <div
                   key={index}
-                  className="glass-card rounded-xl overflow-hidden hover:glow-primary transition-all group"
+                  className="glass-card rounded-xl overflow-hidden hover:glow-primary hover:-translate-y-2 transition-all duration-300 group animate-slide-up"
                 >
                   <div className={`p-6 bg-gradient-to-br ${roadmap.color}`}>
                     <div className="flex items-center gap-4">
@@ -138,7 +138,10 @@ const Resources = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {resources.map((category, index) => (
-                <div key={index} className="glass-card rounded-xl p-6">
+                <div
+                  key={index}
+                  className="glass-card rounded-xl p-6 hover:glow-primary hover:-translate-y-2 transition-all duration-300 animate-slide-up"
+                >
                   <h3 className="text-lg font-semibold text-foreground mb-4 pb-2 border-b border-border">
                     {category.category}
                   </h3>

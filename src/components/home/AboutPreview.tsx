@@ -17,7 +17,7 @@ const AboutPreview = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-slide-up">
             <span className="text-primary text-sm font-medium uppercase tracking-wider">About Us</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               We are The Best
@@ -49,8 +49,8 @@ const AboutPreview = () => {
           </div>
 
           {/* Right - Visual */}
-          <div className="relative">
-            <div className="glass-card rounded-2xl p-8 space-y-6">
+          <div className="relative animate-slide-up">
+            <div className="glass-card rounded-2xl p-8 space-y-6 hover:glow-primary hover:-translate-y-2 transition-all duration-300">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Club Stats</span>
                 <span className="text-xs text-primary">2024</span>

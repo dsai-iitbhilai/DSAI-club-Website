@@ -128,3 +128,49 @@ All colors MUST be HSL.
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+@layer utilities {
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(hsl(210 30% 20% / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 30% 20% / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at center, black, transparent 70%);
+    opacity: 0.55;
+    animation: grid-move 32s linear infinite;
+  }
+
+  .layout-orbit {
+    background:
+      radial-gradient(circle at 10% 0%, hsl(183 100% 45% / 0.18), transparent 55%),
+      radial-gradient(circle at 90% 100%, hsl(200 80% 50% / 0.18), transparent 55%);
+    mix-blend-mode: screen;
+    animation: orbit-glow 26s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes grid-move {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 64px 64px, 64px 64px;
+  }
+}
+
+@keyframes orbit-glow {
+  0% {
+    opacity: 0.35;
+    filter: blur(28px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: blur(40px);
+  }
+  100% {
+    opacity: 0.35;
+    filter: blur(28px);
+  }
+}

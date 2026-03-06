@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail, Instagram, TrendingUp } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Instagram, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -12,7 +12,8 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
-      
+      <div className="hero-grid pointer-events-none" />
+
       {/* Animated particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
@@ -51,32 +52,60 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/projects">
-                <Button size="lg" className="gradient-primary glow-primary text-primary-foreground font-semibold gap-2">
+                <Button
+                  size="lg"
+                  className="gradient-primary glow-primary text-primary-foreground font-semibold gap-2"
+                >
                   View our Projects
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/community">
-                <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-secondary">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-border text-foreground hover:bg-secondary"
+                >
                   Meet the Team
                 </Button>
               </Link>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-center gap-4 pt-4">
               <span className="text-sm text-muted-foreground">Our Socials</span>
               <div className="flex gap-2">
-                {[Github, Linkedin, Mail, Instagram].map((Icon, i) => (
+                {[
+                  {
+                    icon: Github,
+                    href: "https://github.com/dsai-iitbhilai",
+                  },
+                  {
+                    icon: Linkedin,
+                    href: "https://www.linkedin.com/company/dsai-club-iit-bhilai",
+                  },
+                  {
+                    icon: Instagram,
+                    href: "https://www.instagram.com/dsai_iitbhilai",
+                  },
+                ].map((social, i) => (
                   <a
                     key={i}
-                    href="#"
-                    className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary transition-all"
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary hover:-translate-y-1 transition-all duration-300"
                   >
-                    <Icon className="w-5 h-5" />
+                    <social.icon className="w-5 h-5" />
                   </a>
                 ))}
               </div>
+              <a
+                href="mailto:dsai_club@iitbhilai.ac.in"
+                className="text-sm text-primary hover:text-primary/80 transition-colors break-all"
+              >
+                dsai_club@iitbhilai.ac.in
+              </a>
             </div>
           </div>
 
@@ -110,8 +139,8 @@ const HeroSection = () => {
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl" />
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl" />
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl animate-pulse-glow" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-pulse-glow" />
           </div>
         </div>
       </div>
